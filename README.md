@@ -46,7 +46,6 @@ void main() {
   );
 }
 
-// --- الشاشة الأولى: قائمة المهمات/المنتجات الفضائية ---
 class SpaceProductListScreen extends StatelessWidget {
   const SpaceProductListScreen({super.key});
 
@@ -81,7 +80,6 @@ class SpaceProductListScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Text(
-                "قائمة العناصر المكتشفة",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 22,
@@ -90,7 +88,6 @@ class SpaceProductListScreen extends StatelessWidget {
               ),
               const SizedBox(height: 40),
 
-              // تطبيق Navigator.push وإرسال البيانات (Exercise 01 & 02)
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.cyanAccent,
@@ -104,7 +101,6 @@ class SpaceProductListScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () async {
-                  // إرسال البيانات وانتظار النتيجة (await)
                   final result = await Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -114,7 +110,6 @@ class SpaceProductListScreen extends StatelessWidget {
                     ),
                   );
 
-                  // استقبال النتيجة وإظهارها في SnackBar (Exercise 02 Requirement)
                   if (result != null && context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
@@ -126,7 +121,6 @@ class SpaceProductListScreen extends StatelessWidget {
                   }
                 },
                 child: const Text(
-                  "فحص العينة ",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
@@ -171,7 +165,7 @@ class SpaceDetailsScreen extends StatelessWidget {
               const Icon(Icons.biotech, color: Colors.cyanAccent, size: 50),
               const SizedBox(height: 20),
               Text(
-                "تحليل: $itemName",
+                
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -180,7 +174,6 @@ class SpaceDetailsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Text(
-                "المواصفات: عينة نادرة تحتوي على جزيئات من غبار النجوم والكربون المتبلور.",
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.white70),
               ),
@@ -197,7 +190,6 @@ class SpaceDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // إرجاع النتيجة للشاشة السابقة (Backward Data)
                   Navigator.pop(
                     context,
                     "تم حفظ بيانات '$itemName' في القاعدة",
